@@ -9,12 +9,13 @@
 		data-sap-ui-theme="sap_horizon"
 		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true"
-		data-sap-ui-on-init="module:ui5/walkthrough/index"
+		data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
 		data-sap-ui-resource-roots='{
 			"ui5.walkthrough": "./"
 		}'>
 	</script>
 </head>
 <body class="sapUiBody" id="content">
+	<div data-sap-ui-component data-name="ui5.walkthrough" data-id="container" data-settings='{"id" : "walkthrough"}'></div>	
 </body>
 </html>
