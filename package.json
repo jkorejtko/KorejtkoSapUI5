@@ -1,0 +1,11 @@
+{
+  "name": "ui5.walkthrough",
+  "version": "1.0.0",
+  "description": "UI5 TypeScript Walkthrough",
+  "scripts": {
+    "start": "ui5 serve -o index.html"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^4.0.15"
+  }
+}
