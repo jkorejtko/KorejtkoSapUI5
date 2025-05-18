@@ -4,23 +4,12 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true">
 	<Shell>
-		<App>
+		<App class="myAppDemoWT">
 			<pages>
 				<Page title="{i18n>homePageTitle}">
 					<content>
-						<Panel
-							headerText="{i18n>helloPanelTitle}">
-							<content>
-								<Button
-									text="{i18n>showHelloButtonText}"
-									press=".onShowHello"/>
-								<Input
-									value="{/recipient/name}"
-									description="Hello {/recipient/name}"
-									valueLiveUpdate="true"
-									width="60%"/>
-							</content>
-						</Panel>
+						<mvc:XMLView viewName="ui5.walkthrough.view.HelloPanel"/>
+						<mvc:XMLView viewName="ui5.walkthrough.view.InvoiceList"/>	
 					</content>
 				</Page>
 			</pages>

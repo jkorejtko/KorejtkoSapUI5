@@ -6,6 +6,7 @@ framework:
   name: OpenUI5
   version: "1.136.0"
   libraries:
+    - name: sap.m
     - name: sap.ui.core
     - name: themelib_sap_horizon
 builder:
@@ -18,5 +19,10 @@ server:
     afterMiddleware: compression
   - name: ui5-middleware-serveframework
     afterMiddleware: compression
+  - name: ui5-middleware-simpleproxy
+    afterMiddleware: compression
+    mountPath: /V2
+    configuration:
+      baseUri: "https://services.odata.org"
   - name: ui5-middleware-livereload
     afterMiddleware: compression
