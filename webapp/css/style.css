@@ -1,12 +1,7 @@
-html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
-    margin-right: 0.125rem
- }
- 
- html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
-    margin-left: 0.125rem
- }
- 
- .myAppDemoWT .smallPadding {
+.myAppDemoWT .smallPadding {
     padding: 4px 12px
- }
- 
+}
+
+.myAppDemoWT .mediumPadding {
+    padding: 16px
+}

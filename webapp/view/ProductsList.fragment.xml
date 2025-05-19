@@ -1,0 +1,34 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+   <Dialog
+      id="addProductDialog"
+      title="{i18n>dialogAddProductTitle}">
+      <content>
+         <VBox class="sapUiSmallMargin">
+            <Label text="{i18n>dialogAddProductName}" for="addProductName" />
+            <Input id="addProductName" placeholder="{i18n>dialogAddProductInputName}" class="sapUiSmallMarginBottom" />
+
+            <Label text="{i18n>dialogAddProductPrice}" for="addProductPrice" />
+            <Input id="addProductPrice" type="Number" placeholder="{i18n>dialogAddProductInputPrice}" class="sapUiSmallMarginBottom" />
+
+            <Label text="{i18n>dialogAddProductRating}" for="addProductRating" />
+            <RatingIndicator id="addProductRating" maxValue="5" class="sapUiSmallMarginBottom" value="5" tooltip="{i18n>dialogAddProductInputRating}" />
+         </VBox>
+      </content>
+      <beginButton>
+         <Button
+            text="{i18n>dialogAddProductCancelButton}"
+            icon="sap-icon://decline"
+            type="Reject"
+            press=".onCloseDialog"/>
+      </beginButton>
+      <endButton>
+         <Button
+            text="{i18n>dialogAddProductSaveButton}"
+            icon="sap-icon://save"
+            type="Accept"
+            press=".onAddProductDialog"/>
+      </endButton>
+   </Dialog>
+</core:FragmentDefinition>

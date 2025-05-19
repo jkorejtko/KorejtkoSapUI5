@@ -14,7 +14,17 @@
          <Toolbar>
             <Title text="{i18n>productsListTitle}"/>
             <ToolbarSpacer/>
-            <SearchField width="50%" search=".onFilterList" placeholder="{i18n>productsListSearch}"/>
+            <SearchField
+               width="50%"
+               search=".onFilterList"
+               placeholder="{i18n>productsListSearch}"/>
+            <ToolbarSpacer/>
+            <Button
+               id="addProductButton"
+               icon="sap-icon://add"
+               text="{i18n>productsAddButton}"
+               type="Emphasized"
+               press=".onOpenAddDialog"/>
          </Toolbar>
       </headerToolbar>
       <items>
@@ -35,8 +45,7 @@
                         formatOptions: {
                            showMeasure: true
                         }
-                     }" 
-                     design="Bold"
+                     }"
                   />
 
                   <RatingIndicator
