@@ -1,0 +1,53 @@
+<mvc:View
+   controllerName="ui5.walkthrough.controller.ProductsList"
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:mvc="sap.ui.core.mvc">
+   <List
+      id="productsList"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{
+         path: 'products>/Products'
+      }">
+      <headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>productsListTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField width="50%" search=".onFilterList" placeholder="{i18n>productsListSearch}"/>
+         </Toolbar>
+      </headerToolbar>
+      <items>
+         <CustomListItem>
+            <HBox class="smallPadding" justifyContent="SpaceBetween" alignItems="Center" width="100%" columnGap="1rem">
+               <VBox>
+                  <Text text="{products>Name}" />
+               </VBox>
+
+               <HBox alignItems="Center" columnGap="1rem">
+                  <Text 
+                     text="{
+                        parts: [
+                           'products>Price',
+                           'view>/currency'
+                        ],
+                        type: 'sap.ui.model.type.Currency',
+                        formatOptions: {
+                           showMeasure: true
+                        }
+                     }" 
+                     design="Bold"
+                  />
+
+                  <RatingIndicator
+                     value="{products>Rating}"
+                     maxValue="5"
+                     enabled="false"
+                     iconSize="1rem"/>
+               </HBox>
+
+            </HBox>
+         </CustomListItem>
+      </items>
+   </List>
+</mvc:View>

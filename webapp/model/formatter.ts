@@ -7,11 +7,11 @@ export default  {
         const resourceBundle = (this?.getOwnerComponent()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
         switch (status) {
             case "A":
-                return resourceBundle.getText("invoiceStatusA");
+                return resourceBundle.getText("productsStatusA");
             case "B":
-                return resourceBundle.getText("invoiceStatusB");
+                return resourceBundle.getText("productsStatusB");
             case "C":
-                return resourceBundle.getText("invoiceStatusC");
+                return resourceBundle.getText("productsStatusC");
             default:
                 return status;
         }

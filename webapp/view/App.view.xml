@@ -29,7 +29,7 @@
 					</customHeader>
 					<content>
 						<mvc:XMLView viewName="ui5.walkthrough.view.HelloPanel"/>
-						<mvc:XMLView viewName="ui5.walkthrough.view.InvoiceList"/>	
+						<mvc:XMLView viewName="ui5.walkthrough.view.ProductsList"/>	
 					</content>
 				</Page>
 			</pages>

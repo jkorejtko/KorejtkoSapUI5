@@ -6,8 +6,7 @@ html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
     margin-left: 0.125rem
  }
  
- .myAppDemoWT .myCustomText {
-    display: inline-block;
-    font-weight: bold;
+ .myAppDemoWT .smallPadding {
+    padding: 4px 12px
  }
  

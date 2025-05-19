@@ -17,11 +17,15 @@
             "version": "1.0.0"
         },
         "dataSources": {
-            "invoiceRemote": {
-                "uri": "V2/Northwind/Northwind.svc/",
+            "productsRemote": {
+                "uri": "V2/(S(op5lz2kfg5tcccygwkyi0lhy))/OData/OData.svc",
                 "type": "OData",
                 "settings": {
-                    "odataVersion": "2.0"
+                    "headers": {
+                        "MaxDataServiceVersion": "3.0",
+                        "DataServiceVersion": "3.0"
+                    },
+                    "odataVersion": "3.0"
                 }
             }
         }
@@ -53,13 +57,20 @@
                 "settings": {
                     "bundleName": "ui5.walkthrough.i18n.i18n",
                     "supportedLocales": [
-                        ""
+                        "cs",
+                        "en"
                     ],
-                    "fallbackLocale": ""
+                    "fallbackLocale": "en"
                 }
             },
-            "invoice": {
-                "dataSource": "invoiceRemote"
+            "products": {
+                "dataSource": "productsRemote",
+                "settings": {
+                    "headers": {
+                        "MaxDataServiceVersion": "3.0",
+                        "DataServiceVersion": "3.0"
+                    }
+                }
             }
         },
         "resources": {
