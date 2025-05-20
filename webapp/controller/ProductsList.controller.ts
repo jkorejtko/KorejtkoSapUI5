@@ -77,6 +77,9 @@ export default class App extends Controller {
     }
 
     onAddProductDialog(): void {
+        const oDialog = this.byId("addProductDialog");
+        oDialog.setBusy(true);
+
         const productName = (this.byId("addProductName") as sap.m.Input)?.getValue();
         const productPrice = (this.byId("addProductPrice") as sap.m.Input)?.getValue();
         const productRating = (this.byId("addProductRating") as sap.m.RatingIndicator)?.getValue();
@@ -101,6 +104,7 @@ export default class App extends Controller {
         if (error.length > 0) {
             const msg = resourceBundle.getText("dialogAddProductFill", [error.join(", ")]);
             MessageToast.show(msg);
+            oDialog.setBusy(false);
             return;
         }
 
@@ -124,17 +128,25 @@ export default class App extends Controller {
                     const msg = resourceBundle.getText("dialogAddProductSuccess");
                     MessageToast.show(msg);
                     this.onCloseDialog();
+                    oDialog.setBusy(false);
                 },
                 error: (oError) => {
                     console.error("Error while creating product:", oError);
-                    const msg = resourceBundle.getText("dialogAddProductFailed");
+                    const jsonMessage = JSON.parse(oError?.responseText);
+                    const errorMessage = jsonMessage?.['odata.error']?.message?.value;
+                    let msg = resourceBundle.getText("dialogAddProductFailed");
+                    if (errorMessage) {
+                        msg = resourceBundle.getText("dialogAddProductError", [errorMessage]);
+                    }
                     MessageToast.show(msg);
+                    oDialog.setBusy(false);
                 }
             });
         } catch (error) {
             console.error("Error adding product: ", error);
             const msg = resourceBundle.getText("dialogAddProductError");
             MessageToast.show(msg);
+            oDialog.setBusy(false);
             return;
         }
     }

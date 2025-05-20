@@ -3,7 +3,8 @@
    xmlns:core="sap.ui.core">
    <Dialog
       id="addProductDialog"
-      title="{i18n>dialogAddProductTitle}">
+      title="{i18n>dialogAddProductTitle}"
+      busyIndicatorDelay="0">
       <content>
          <VBox class="sapUiSmallMargin">
             <Label text="{i18n>dialogAddProductName}" for="addProductName" />
