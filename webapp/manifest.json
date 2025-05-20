@@ -79,6 +79,43 @@
                 "uri": "css/style.css"
               }
             ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "type": "View",
+                "viewType": "XML",
+                "path": "ui5.walkthrough.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "transition": "slide"
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "app",
+                    "target": "app"
+                },
+                {
+                    "pattern": "detail/{productPath}",
+                    "name": "detail",
+                    "target": "detail"
+                }
+            ],
+            "targets": {
+                "app": {
+                    "viewName": "App",
+                    "viewLevel": 1,
+                    "controlId": "app",
+                    "controlAggregation": "pages",
+                    "viewType": "XML",
+                    "transition": "slide"
+                },
+                "detail": {
+                    "id": "detail",
+                    "name": "Detail"
+                }
+            }
         }
     }
 }

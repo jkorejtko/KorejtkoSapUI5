@@ -5,7 +5,7 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true">
 	<Shell>
-		<App class="myAppDemoWT">
+		<App class="myAppDemoWT" id="app">
 			<pages>
 				<Page>
 					<customHeader>

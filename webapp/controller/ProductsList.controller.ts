@@ -7,6 +7,9 @@ import Dialog from "sap/m/Dialog";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import MessageToast from "sap/m/MessageToast";
+import UIComponent from "sap/ui/core/UIComponent";
+import Event from "sap/ui/base/Event";
+import CustomListItem from "sap/m/CustomListItem";
 
 /**
  * @namespace ui5.walkthrough.controller
@@ -27,11 +30,19 @@ export default class App extends Controller {
         });
         this.getView().setModel(oModel, "products");
 
-    
         const viewModel = new JSONModel({
             currency: "EUR"
         });
         this.getView()?.setModel(viewModel, "view");
+    }
+
+    onPress(event: Event): void {
+        const item = event.getSource() as CustomListItem;
+
+        const router = UIComponent.getRouterFor(this);
+        router.navTo("detail", {
+            productPath: window.encodeURIComponent(item.getBindingContext("products").getPath().substring(1))
+        });
     }
 
     /**

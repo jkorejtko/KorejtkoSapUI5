@@ -28,7 +28,10 @@
          </Toolbar>
       </headerToolbar>
       <items>
-         <CustomListItem>
+         <CustomListItem
+            type="Navigation"
+            press=".onPress"
+         >
             <HBox class="smallPadding" justifyContent="SpaceBetween" alignItems="Center" width="100%" columnGap="1rem">
                <VBox>
                   <Text text="{products>Name}" />
@@ -54,7 +57,6 @@
                      enabled="false"
                      iconSize="1rem"/>
                </HBox>
-
             </HBox>
          </CustomListItem>
       </items>

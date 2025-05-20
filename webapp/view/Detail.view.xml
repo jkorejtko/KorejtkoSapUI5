@@ -1,0 +1,99 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.Detail"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc">
+
+  <Page
+    title="{i18n>detailPageTitle}"
+    showNavButton="true"
+		navButtonPress=".onNavBack"
+  >
+    <content>
+      <VBox class="mediumPadding" width="100%">
+        <Title text="{i18n>detailPageTitle}" level="H2" class="sapUiSmallMarginBottom" />
+
+        <HBox class="sapUiMediumMarginBottom" justifyContent="SpaceBetween" alignItems="Center" width="100%" columnGap="1rem">
+          <VBox>
+            <Text text="{i18n>detailPageProductId}" />
+            <Text text="{product>ID}" />
+          </VBox>
+
+          <VBox>
+            <Text text="{i18n>detailPageProductName}" />
+            <Text text="{product>Name}" />
+          </VBox>
+
+          <VBox>
+            <Text text="{i18n>detailPageProductPrice}" />
+            <Text 
+                text="{
+                  parts: [
+                      'product>Price',
+                      'view>/currency'
+                  ],
+                  type: 'sap.ui.model.type.Currency',
+                  formatOptions: {
+                      showMeasure: true
+                  }
+                }"
+            />
+          </VBox>
+        </HBox>
+
+        <VBox class="sapUiSmallMarginBottom">
+          <Text text="{i18n>detailPageProductRating}" />
+          <RatingIndicator
+              value="{product>Rating}"
+              maxValue="5"
+              enabled="false"
+              iconSize="1rem"/>
+        </VBox>
+
+        <VBox class="sapUiSmallMarginBottom">
+        <Text text="{i18n>detailPageProductDescription}" />
+          <Text text="{product>Description}" />
+        </VBox>
+
+        <VBox class="sapUiSmallMarginBottom">
+          <Text text="{i18n>detailPageProductReleaseDate}" />
+          <Text text="{product>ReleaseDate}" />
+        </VBox>
+
+        <VBox>
+          <Text text="{i18n>detailPageProductDiscontinuedDate}" />
+          <Text text="{product>DiscontinuedDate}" />
+        </VBox>
+      </VBox>
+
+      <VBox class="mediumPadding" width="100%">
+        <Title text="{i18n>detailPageSupplierTitle}" level="H2" class="sapUiSmallMarginBottom" />
+        
+        <HBox class="sapUiMediumMarginBottom" justifyContent="SpaceBetween" alignItems="Center" width="100%" columnGap="1rem">
+          <VBox>
+            <Text text="{i18n>detailPageSupplierName}" />
+            <Text text="{supplier>Name}" />
+          </VBox>
+
+          <VBox>
+            <Text text="{i18n>detailPageSupplierCity}" />
+            <Text text="{supplier>Address/City}" />
+          </VBox>
+
+          <VBox>
+            <Text text="{i18n>detailPageSupplierStreet}" />
+            <Text text="{supplier>Address/Street}" />
+          </VBox>
+        </HBox>
+      </VBox>
+
+      <VBox class="mediumPadding" width="100%">
+        <Title text="{i18n>detailPageCategoryTitle}" level="H2" class="sapUiSmallMarginBottom" />
+        
+        <List items="{categories>/}">
+          <StandardListItem title="{categories>Name}" description="ID: {categories>ID}" />
+        </List>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

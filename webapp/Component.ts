@@ -21,5 +21,8 @@ export default class Component extends UIComponent {
         };
         const model = new JSONModel(data);
         this.setModel(model);
+
+        // create the views based on the url/hash
+        this.getRouter().initialize();
     };
 };
